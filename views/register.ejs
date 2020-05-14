@@ -1,0 +1,35 @@
+<body class="bg">
+
+  <div class="container_auth">
+
+    <div class="card">
+      <div class="fadeInDown">
+
+        <div id="top-container">
+
+          <div id="href-container">
+            <a href="login" class="inactive underlineHover"> Sign In </a>
+            <a href="register" class="active">Sign Up </a>
+          </div>
+
+          <form action="" method="POST" autocomplete="off">
+            <input type="text" name="username" class="fadeIn first" placeholder="username" pattern="([A-Za-z]).{2,}" required>
+
+            <input type="password" name="password" class="fadeIn second"  placeholder="password" pattern="^[a-zA-Z0-9_.]*$" required>
+
+            <input type="submit" class="fadeIn third" value="Register">
+          </form>
+          
+          <% if(mesaj !== " ") { %>
+            <div id="mesaj-container">
+              <p> <%- mesaj -%> </p>
+            </div>
+          <% } %>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>

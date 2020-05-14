@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="122" height="122">
+  <defs>
+    <circle id="a" cx="62" cy="60" r="60"/>
+    <linearGradient id="c" x1="76.367%" x2="0%" y1="1.598%" y2="110.857%">
+      <stop offset="0%" stop-color="#56749D"/>
+      <stop offset="100%" stop-color="#25395B"/>
+    </linearGradient>
+    <linearGradient id="d" x1="76.367%" x2="0%" y1="4.293%" y2="107.469%">
+      <stop offset="0%" stop-color="#56749D"/>
+      <stop offset="100%" stop-color="#25395B"/>
+    </linearGradient>
+    <filter id="e" width="114.5%" height="154.5%" x="-7.3%" y="-27.3%" filterUnits="objectBoundingBox">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+    </filter>
+    <linearGradient id="f" x1="61.909%" x2="27.416%" y1="-23.583%" y2="142.519%">
+      <stop offset="0%" stop-color="#56749D"/>
+      <stop offset="100%" stop-color="#25395B"/>
+    </linearGradient>
+    <linearGradient id="g" x1="0%" y1="50%" y2="50%">
+      <stop offset="0%" stop-color="#5B79A2"/>
+      <stop offset="100%" stop-color="#2E4469"/>
+    </linearGradient>
+    <linearGradient id="h" x1="16.571%" x2="59.284%" y1="47.364%" y2="50.891%">
+      <stop offset="0%" stop-color="#4CC9AE"/>
+      <stop offset="100%" stop-color="#4BF8D1" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="i" x1="20.279%" x2="77.708%" y1="28.715%" y2="66.909%">
+      <stop offset="0%" stop-color="#5B79A2"/>
+      <stop offset="100%" stop-color="#2E4469"/>
+    </linearGradient>
+    <linearGradient id="j" x1="0%" y1="50%" y2="50%">
+      <stop offset="0%" stop-color="#6F90BC"/>
+      <stop offset="100%" stop-color="#2E4469"/>
+    </linearGradient>
+    <linearGradient id="k" x1="20.279%" x2="77.708%" y1="40.54%" y2="57.515%">
+      <stop offset="0%" stop-color="#5B79A2"/>
+      <stop offset="100%" stop-color="#2E4469"/>
+    </linearGradient>
+    <linearGradient id="l" x1="0%" y1="50%" y2="50%">
+      <stop offset="0%" stop-color="#6F90BC"/>
+      <stop offset="100%" stop-color="#2E4469"/>
+    </linearGradient>
+    <linearGradient id="m" x1="0%" y1="50%" y2="50%">
+      <stop offset="0%" stop-color="#5B79A2"/>
+      <stop offset="100%" stop-color="#2E4469"/>
+    </linearGradient>
+    <filter id="n" width="184.4%" height="345.5%" x="-42.2%" y="-122.7%" filterUnits="objectBoundingBox">
+      <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="6"/>
+      <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0.254901961 0 0 0 0 0.756862745 0 0 0 0 0.650980392 0 0 0 1 0"/>
+      <feMerge>
+        <feMergeNode in="shadowMatrixOuter1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="o" cy="39.664%" r="55.519%" fx="50%" fy="39.664%" gradientTransform="matrix(-.54759 -.50923 .324 -.86063 .645 .993)">
+      <stop offset="0%" stop-color="#FFF"/>
+      <stop offset="100%" stop-color="#FFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="p" x1="14.044%" x2="193.424%" y1="19.171%" y2="152.389%">
+      <stop offset="0%" stop-color="#6EDCC4"/>
+      <stop offset="100%" stop-color="#1AAB8B" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="q" x1="50%" x2="50%" y1="11.35%" y2="111.35%">
+      <stop offset="0%" stop-color="#6EDCC4"/>
+      <stop offset="100%" stop-color="#1AAB8B"/>
+    </linearGradient>
+    <linearGradient id="r" x1="50%" x2="50%" y1="11.35%" y2="111.35%">
+      <stop offset="0%" stop-color="#59B29E"/>
+      <stop offset="100%" stop-color="#1AAB8B"/>
+    </linearGradient>
+    <linearGradient id="s" x1="50%" x2="50%" y1="11.35%" y2="111.35%">
+      <stop offset="0%" stop-color="#6EDCC4"/>
+      <stop offset="100%" stop-color="#1AAB8B"/>
+    </linearGradient>
+    <linearGradient id="t" x1="0%" y1="50%" y2="50%">
+      <stop offset="0%" stop-color="#6F90BC"/>
+      <stop offset="100%" stop-color="#2E4469"/>
+    </linearGradient>
+    <linearGradient id="u" x1="16.571%" x2="31.545%" y1="40.166%" y2="52.219%">
+      <stop offset="0%" stop-color="#4CC9AE"/>
+      <stop offset="100%" stop-color="#4BF8D1" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="v" x1="-24.308%" y1="-161.748%" y2="17.569%">
+      <stop offset="0%" stop-color="#5B79A2"/>
+      <stop offset="100%" stop-color="#2E4469"/>
+    </linearGradient>
+    <linearGradient id="w" x1="14.044%" x2="193.424%" y1="20.031%" y2="149.533%">
+      <stop offset="0%" stop-color="#6EDCC4"/>
+      <stop offset="100%" stop-color="#1AAB8B" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="x" width="209.1%" height="209.1%" x="-54.5%" y="-54.5%" filterUnits="objectBoundingBox">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+    </filter>
+    <linearGradient id="y" x1="15.236%" x2="94.911%" y1="6.048%" y2="86.068%">
+      <stop offset="0%" stop-color="#48F0CC"/>
+      <stop offset="100%" stop-color="#1AAB8B"/>
+    </linearGradient>
+    <circle id="z" cx="62" cy="60" r="60"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(-1 1)">
+    <mask id="b" fill="#fff">
+      <use xlink:href="#a"/>
+    </mask>
+    <use fill="#000" fill-opacity=".152" xlink:href="#a"/>
+    <g mask="url(#b)">
+      <g transform="translate(11 70)">
+        <path fill="#2E4469" d="M21 4h58.716c6.627 0 12 5.373 12 12v24c0 6.627-5.373 12-12 12H21c-6.627 0-12-5.373-12-12V16C9 9.373 14.373 4 21 4z"/>
+        <path stroke="url(#c)" stroke-width="1.5" d="M49.5 19.45c1.07 6.125 4.57 8.832 10.5 8.122 8.924-1.068 3.788 7.77 3.5 3.428"/>
+        <path stroke="url(#d)" stroke-width="1.5" d="M65.5 32.208c-.383-3.656 2.351-5.484 8.201-5.484 5.22 0 8.739-2.892 7.799-7.274"/>
+        <rect width="82.716" height="22" x="9" fill="#1B283E" filter="url(#e)" opacity=".553" rx="3"/>
+        <path stroke="url(#f)" stroke-width="1.5" d="M26.22 18.645C26.29 22.529 25.494 31 19.392 28s-8.173 8.13 1.485 8.5"/>
+        <rect width="100" height="17" x=".679" y="35" fill="url(#g)" rx="7"/>
+        <rect width="99" height="16" x="1.179" y="35.5" stroke="url(#h)" rx="7"/>
+      </g>
+    </g>
+    <g mask="url(#b)">
+      <g transform="translate(34 86)">
+        <rect width="4" height="3" x="1.5" y="1" fill="url(#i)" rx="1.5"/>
+        <rect width="7" height="2" fill="url(#j)" rx="1"/>
+      </g>
+    </g>
+    <g mask="url(#b)">
+      <g transform="translate(57 86)">
+        <rect width="4" height="3" x="1.5" y="1" fill="url(#i)" rx="1.5"/>
+        <rect width="7" height="2" fill="url(#j)" rx="1"/>
+      </g>
+    </g>
+    <g mask="url(#b)">
+      <g transform="matrix(1 0 0 -1 70 105)">
+        <rect width="6" height="3" x="3.5" y="1" fill="url(#k)" rx="1.5"/>
+        <rect width="12" height="2" x=".5" fill="url(#l)" rx="1"/>
+      </g>
+    </g>
+    <g mask="url(#b)">
+      <g transform="translate(89 86)">
+        <rect width="4" height="3" x="1.5" y="1" fill="url(#i)" rx="1.5"/>
+        <rect width="7" height="2" fill="url(#j)" rx="1"/>
+      </g>
+    </g>
+    <rect width="79" height="52" x="22" y="19" fill="url(#m)" mask="url(#b)" rx="7"/>
+    <path fill="#22385D" d="M28 21.28h67a4 4 0 0 1 4 4V65a4 4 0 0 1-4 4H28a4 4 0 0 1-4-4V25.28a4 4 0 0 1 4-4z" mask="url(#b)"/>
+    <g fill="#5CD2B8" filter="url(#n)" mask="url(#b)">
+      <path d="M30 27h23v3H30zm0 6h13v3H30z" opacity=".326"/>
+      <path d="M45 33h19v3H45z"/>
+      <path d="M73 33h7v3h-7zm9 0h12v3H82z" opacity=".326"/>
+      <path d="M66 33h5v3h-5z"/>
+      <path d="M30 46h6v3h-6z" opacity=".326"/>
+      <path d="M38 46h33v3H38z"/>
+      <path d="M73 46h21v3H73zM30 40h13v3H30zm31 0h33v3H61z" opacity=".326"/>
+      <path d="M45 40h14v3H45z"/>
+      <path d="M55 27h9v3h-9z" opacity=".326"/>
+      <path d="M66 27h13v3H66z"/>
+      <path d="M89 27h5v3h-5z" opacity=".326"/>
+      <path d="M81 27h5v3h-5z"/>
+    </g>
+    <path fill="url(#o)" d="M28 21.28h57.978a4 4 0 0 1 2.246 7.31L66.088 43.607a4 4 0 0 1-.18.115l-35.842 21.62A4 4 0 0 1 24 61.915V25.28a4 4 0 0 1 4-4z" mask="url(#b)" opacity=".297"/>
+    <g mask="url(#b)">
+      <g transform="translate(78 37)">
+        <path stroke="url(#p)" stroke-linejoin="round" stroke-width="2" d="M43.467 37.561l-7.896-2.72L30.614 5H2"/>
+        <rect width="4" height="9" fill="url(#q)" rx="2" transform="matrix(-1 0 0 1 4 0)"/>
+        <circle cx="35.5" cy="34.5" r="2.5" fill="url(#r)"/>
+        <path fill="#FFF" fill-opacity=".2" d="M35.222 32c.728 0 1.375.35 1.78.891a2.222 2.222 0 0 0-3.112 3.11A2.222 2.222 0 0 1 35.222 32z"/>
+        <circle cx="30.5" cy="5.5" r="3.5" fill="url(#s)"/>
+        <path fill="#FFF" fill-opacity=".2" d="M30.333 2a3.33 3.33 0 0 1 2.665 1.33 3.333 3.333 0 0 0-4.667 4.666A3.333 3.333 0 0 1 30.333 2z"/>
+      </g>
+    </g>
+    <rect width="91.358" height="30" x="16" y="55.901" fill="url(#t)" rx="7"/>
+    <rect width="90.358" height="29" x="16.5" y="56.401" stroke="url(#u)" rx="7"/>
+    <circle cx="37.877" cy="70.877" r="9.877" fill="url(#v)" stroke="#2E4469"/>
+    <circle cx="60.5" cy="72.5" r="5.5" fill="url(#v)" stroke="#2E4469"/>
+    <circle cx="76.5" cy="72.5" r="5.5" fill="url(#v)" stroke="#2E4469"/>
+    <circle cx="92.5" cy="72.5" r="5.5" fill="url(#v)" stroke="#2E4469"/>
+    <path stroke="url(#s)" d="M37.877 80.753c5.454 0 9.876-4.422 9.876-9.876 0-5.455-4.422-9.877-9.876-9.877C32.422 61 28 65.422 28 70.877" transform="rotate(-90 37.877 70.877)"/>
+    <g transform="translate(.783 15)">
+      <path stroke="url(#w)" stroke-linejoin="round" stroke-width="2" d="M51.676 45.067l-16.579-2.261-4.956-29.841-23.415-2.699" transform="rotate(-141 29.201 27.667)"/>
+      <circle cx="36.923" cy="55.923" r="3.5" fill="url(#s)" transform="rotate(-141 36.923 55.923)"/>
+      <circle cx="37.736" cy="55.736" r="5.5" fill="url(#s)" filter="url(#x)" transform="rotate(-141 37.736 55.736)"/>
+      <circle cx="33.986" cy="12.5" r="2.5" fill="url(#r)" transform="rotate(-141 33.986 12.5)"/>
+      <path fill="#FFF" fill-opacity=".2" d="M32.629 14.618a2.219 2.219 0 0 1-.822-1.813 2.222 2.222 0 0 0 4.376-.459 2.222 2.222 0 0 1-3.554 2.272z"/>
+      <circle cx="19.622" cy="38.184" r="3.5" fill="url(#s)" transform="rotate(-141 19.622 38.184)"/>
+      <path fill="#FFF" fill-opacity=".2" d="M17.549 41.009a3.328 3.328 0 0 1-1.234-2.711 3.333 3.333 0 0 0 6.564-.69 3.333 3.333 0 0 1-5.33 3.4z"/>
+    </g>
+    <use stroke="url(#y)" stroke-width="2" xlink:href="#z"/>
+  </g>
+</svg>
