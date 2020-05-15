@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+html, body {
+  font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    height: 100vh;
+    margin: 0;
+    overflow:hidden;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: whitesmoke;
+}
+
+/* Scroll bar edit */
+
+html {
+    --scrollbarBG: #CFD8DC;
+    --thumbBG: #90A4AE;
+  }
+  body::-webkit-scrollbar {
+    width: 11px;
+  }
+  body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  }
+  body::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG) ;
+    border-radius: 6px;
+    border: 3px solid var(--scrollbarBG);
+  }
+
+/* Scroll bar edit */
+
+nav {
+    background-color: #212529;
+    color: whitesmoke;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+nav a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+nav a:hover, nav a:active, nav a:visited {
+    color: whitesmoke;
+    text-decoration: underline;
+}
+
+.fade-hr {
+    border-width: 0 0 1px;
+    color: rgba(33, 37,41, 1);
+    border-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0),
+      rgba(52, 58, 64, 0.325) 25%,
+      rgba(52, 58, 64, 0.625) 50%,
+      rgba(52, 58, 64, 0.325) 75%,
+      rgba(0, 0, 0, 0) 100%) 0 0 100%;
+    border-style: solid;
+}
+
+#wrap-border { 
+    height: 75%;
+    width: 75%;
+    border: 3px solid transparent;
+    background-image: linear-gradient(0deg, whitesmoke 0%, whitesmoke 100%),
+        linear-gradient(0deg, rgba(33, 37, 41, 1) 0%, rgba(33, 37, 41, 1) 100%),
+        linear-gradient(0deg, rgba(33, 37, 41, 1) 0%, rgba(33, 37, 41, 1) 100%),
+        linear-gradient(0deg, rgba(33, 37, 41, 1) 0%, rgba(33, 37, 41, 1) 100%),
+        linear-gradient(0deg, rgba(33, 37, 41, 1) 0%, rgba(33, 37, 41, 1) 100%);
+    background-origin: padding-box, border-box, border-box, border-box, border-box;
+    background-repeat: no-repeat;
+    background-size: 100% 100%, 13% 25%, 13% 25%, 13% 25%, 13% 25%;
+    background-position: top left, top left, top right, bottom left, bottom right;
+}
+
+#container {
+    background-color: #edf0f2;
+    border: 2px solid rgba(33, 37,41, 1);
+    flex-direction: column;
+}
+
+#top-container {
+    flex: 0.4;
+    flex-direction: column;
+}
+
+#table-container {
+    flex: 1;
+    flex-grow: 1;
+}
+
+#table-container table {
+    width: 80%;
+    border-radius: .5%;
+}
+
+#table-container table tbody {
+    display: block;
+    overflow: auto;
+    max-height: 380px;
+}
+
+#table-container thead, #table-container tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+#table-container thead {
+    width: calc( 100% - 1em );
+}
+
+.btn-container {
+    width: 80%;
+}
+
+#footer { 
+    background-color: #212529;
+    color: whitesmoke;
+    font-size: 1.2rem;
+    margin-top: auto;
+    align-items: center;
+    text-align: center;
+}

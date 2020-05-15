@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/styleIndex.css">
+
+</head>
+
+<body>
+
+    <nav class="py-3">
+        <p class="mb-0 ml-4">Bine aţi venit, <%- locals.uname  -%></p>
+        <div class="flex-grow-1 text-center">
+            <a href="/" class="mr-4">Home</a>
+            <% if(locals.rol == 2) { %>
+            <a href="admin-panel" class="mr-4">Admin Panel</a>
+            <% } %>
+            <a href="add-device">Add new device</a>
+        </div>
+        <a href="logout" class="ml-auto mr-4">Log Out</a>
+    </nav>
+
+    <div class="d-flex h-100 justify-content-center align-items-center">
+        <div id="wrap-border" class="d-flex justify-content-center align-items-center p-5">
+            <div id="container" class="d-flex h-100 w-100">
+                <%- body -%>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<footer id="footer">
+    <p class="mb-0 py-3">&copy; 2020, Geov. All rights reserved</p>
+</footer>
+
+</html>
