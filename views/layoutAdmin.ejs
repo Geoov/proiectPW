@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Cel mai jmeker project</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--    css     -->
+
+    <link rel="stylesheet" type="text/css" href="css/styleAdmin.css">
+    <link href="css/aos.css" rel="stylesheet">
+    <link href="css/ekko-lightbox.css" rel="stylesheet">
+
+    <!--   CDN's   -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" rel="stylesheet" type='text/css'>
+
+</head>
+<body id="top">
+
+<header>
+
+    <section class="mx-0" style="padding-top: 10rem;">
+
+        <div class="flex-container row px-0">
+            <div class="col-md-5 d-flex justify-content-center px-0 mx-0">
+                <div class="col-md-2 px-0 mx-0"></div>
+                <div class="col-md-10 d-flex no-wrap mx-auto px-0">
+                    <img class="position-absolute img-responsive mx-auto d-block mt-5 px-5"
+                         src="https://laracasts.com/images/journeys/journey-php.svg">
+
+                </div>
+            </div>
+
+            <div class="col-md-7 d-flex justify-content-center px-0">
+                <div class="col-md-12 d-flex no-wrap mx-auto px-0">
+
+                    <div class="da-home-page-text col-md-12 mx-auto" data-aos="fade-left" data-aos-duration="1000">
+                        <div class="container mx-auto">
+                            <div class="col-md-10 px-0 mx-0">
+
+                                <h2 class="display-3 mb-3" style="margin-left:-6px;">Admin Control Panel</h2>
+                                <h3 class="h5">Here you can see the configuration of your computer network.</h3>
+                                <h3 class="h5 mb-4 pb-3">Access just for authorized personal !!</h3>
+
+                                <div class="flex-wrap flex-row justify-content-center px-0 mx-2">
+
+                                    <div class="d-inline-flex mx-1 customA">
+                                        <a href="#switch" class="d-block smooth-scroll">
+                                            <div class="bg-blue-dark bg-green-grd position-relative rounded-lg px-4 py-3 d-flex flex-column align-items-center justify-content-center">
+                                                <img src="images/switch.svg" alt="icon" class="mb-2"
+                                                     style="height: 63px;" width="63">
+                                                <h3 class="text-center-xs text-uppercase font-weight-light mb-0"
+                                                    style="font-size:.75rem;">switch</h3>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <div class="d-inline-flex mx-1 customA">
+                                        <a href="#wifi" class="d-block smooth-scroll">
+                                            <div class="bg-blue-dark bg-red-grd position-relative rounded-lg px-4 py-3 d-inline-flex flex-column align-items-center justify-content-center">
+                                                <img src="images/access_point.webp" alt="icon" class="mb-2"
+                                                     style="height: 63px;" width="63">
+                                                <h3 class="text-center-xs text-uppercase font-weight-light mb-0"
+                                                    style="font-size:.75rem;">WiFi</h3>
+                                            </div>
+                                        </a>
+                                    </div>
+
+
+                                    <div class="d-inline-flex mx-1 customA">
+                                        <a href="#server" class="d-block smooth-scroll">
+                                            <div class="bg-blue-dark bg-blue-grd position-relative rounded-lg px-4 py-3 d-flex flex-column align-items-center justify-content-center">
+                                                <img src="images/server.webp" alt="icon" class="mb-2"
+                                                     style="height: 63px;" width="63">
+                                                <h3 class="text-center-xs text-uppercase font-weight-light mb-0"
+                                                    style="font-size:.75rem;">server</h3>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <div class="d-inline-flex mx-1 customA">
+                                        <a href="#router" class="d-block smooth-scroll">
+                                            <div class="bg-blue-dark bg-yellow-grd position-relative rounded-lg px-4 py-3 d-flex flex-column align-items-center justify-content-center">
+                                                <img src="images/router.webp" alt="icon" class="mb-2"
+                                                     style="height: 63px;" width="63">
+                                                <h3 class="text-center-xs text-uppercase font-weight-light mb-0"
+                                                    style="font-size:.75rem;">router</h3>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <div class="d-inline-flex mx-1 customA">
+                                        <a href="/" class="d-block smooth-scroll">
+                                            <div class="bg-blue-dark bg-violet-grd position-relative rounded-lg px-4 py-3 d-flex flex-column align-items-center justify-content-center">
+                                                <img src="images/devices.webp" alt="icon" class="mb-2"
+                                                     style="height: 63px;" width="63">
+                                                <h3 class="text-center-xs text-uppercase font-weight-light mb-0"
+                                                    style="font-size:.75rem;">add device</h3>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </section>
+
+</header>
+
+<%- body -%>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/ekko-lightbox.min.js"></script>
+<script src="js/main.js"></script>
+
+<script type="text/javascript">
+    $(function() {
+        $('[data-toggle="popover"]').popover({
+            container: 'body'
+        });
+    });
+</script>
+
+</body>
+</html>

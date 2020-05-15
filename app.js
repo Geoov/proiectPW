@@ -198,7 +198,6 @@ app.get('/', (req, res) => {
               newRow.device_type = row['device_type'];
               newRow.OS = row['OS'];
               devices.push(newRow);
-              console.log("intra x1");
             } else {
               conn.query('SELECT AP_ESSID FROM access_point WHERE MAC = ?', row['MAC'], (err, ap_essid) => {
                 if (err) throw err;
@@ -210,7 +209,6 @@ app.get('/', (req, res) => {
                   newRow.SSID = ssid[0].SSID;
                   newRow.OS = row['OS'];
                   devices.push(newRow);
-                  console.log("intra x2");
                 });
               });
             }
@@ -228,6 +226,7 @@ app.get('/', (req, res) => {
 
   } else {
     res.redirect('/login');
+    // res.status(403).render();
   }
 
 });
@@ -261,7 +260,7 @@ app.post('/add-device', (req, res) => {
       if (err) throw err;
       if (MAC != "") {
         MAC_flag = 1;
-        res.cookie("mesajEroareInsert", 'MAC already exist');
+        res.cookie("mesajInsert", 'MAC already exists');
       } else {
         MAC_flag = 0;
       }
@@ -278,7 +277,7 @@ app.post('/add-device', (req, res) => {
       } else {
         IP_flag = 0;
       }
-      return resolve(IP_flag);
+      resolve(IP_flag);
     });
   });
 
@@ -312,9 +311,44 @@ app.post('/add-device', (req, res) => {
 
 app.get('/admin-panel', (req, res) => {
 
-  console.log("mare pizdar tată");
+  var switch_p = new Promise(function (resolve, reject) {
+    conn.query('SELECT * FROM switch', (err, switch_data) => {
+      if (err) throw err;
+      resolve(switch_data);
+    });
+  });
 
-  res.render('admin-panel', { layout: 'layoutAdmin', locals: { _id: sess_id, uname: sess_uname, rol: sess_rol } });
+  ap_data = [];
+
+  var ap_p = new Promise(function (resolve, reject) {
+    conn.query('SELECT ESSID FROM access_point_bridge', (err, essid) => {
+      essid.forEach(function (row) {
+        console.log(row['ESSID']);
+        conn.query('SELECT access_point_details.*, access_point_bridge.BSSID FROM access_point_details, access_point_bridge WHERE access_point_details.AP_ESSID = access_point_bridge.ESSID AND access_point_bridge.ESSID = ?',
+            row['ESSID'], (err, result) => {
+              if(err) throw err;
+              let newRow = {};
+              newRow['ESSID'] = result['AP_ESSID'];
+              newRow['BSSID'] = result['BSSID'];
+              newRow['SSID'] = result['SSID'];
+              newRow['speed'] = result['speed'];
+              newRow['secType'] = result['security_type'];
+              console.log(newRow['ESSID']);
+              ap_data.push(newRow);
+              console.log('ap_data 1: ' + ap_data);
+            });
+        console.log('ap_data 2: ' + ap_data);
+      });
+      resolve(ap_data);
+    });
+  });
+
+  Promise.all([switch_p, ap_p]).then(values => {
+
+    // console.log(values);
+
+    res.render('admin-panel', {layout: 'layoutAdmin', locals: {_id: sess_id, uname: sess_uname, rol: sess_rol}});
+  });
 });
 
 /* < ------------------------------------------------- LAYOUT ADMIN PANEL ------------------------------------------------- > */
