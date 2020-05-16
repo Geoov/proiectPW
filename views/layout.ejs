@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/styleIndex.css">
 
     <title>Cel mai jmeker project</title>
@@ -15,25 +15,29 @@
 
 <body>
 
-    <nav class="py-3">
-        <p class="mb-0 ml-4">Bine aţi venit, <%- locals.uname  -%></p>
-        <div class="flex-grow-1 text-center">
-            <a href="/" class="mr-4">Home</a>
-            <% if(locals.rol == 2) { %>
-            <a href="admin-panel" class="mr-4">Admin Panel</a>
-            <% } %>
-            <a href="add-device">Add new device</a>
-        </div>
-        <a href="logout" class="ml-auto mr-4">Log Out</a>
-    </nav>
+<nav class="py-3">
+    <p class="mb-0 mr-auto ml-4">Bine aţi venit, <%- locals.uname -%></p>
+    <a href="/" class="pr-5 mr-5">Home</a>
+    <a href="logout" class="ml-auto mr-4">Log Out</a>
+</nav>
 
-    <div class="d-flex h-100 justify-content-center align-items-center">
-        <div id="wrap-border" class="d-flex justify-content-center align-items-center p-5">
-            <div id="container" class="d-flex h-100 w-100">
-                <%- body -%>
-            </div>
+<div class="d-flex align-middle justify-content-center">
+    <div id="container-btn-admin" class="d-flex align-middle justify-content-center pt-2 pb-3 px-4">
+        <% if(locals.rol == 2) { %>
+            <a href="admin-panel" class="text-center center-btn">Admin Panel</a>
+        <% } else{ %>
+            <a href="add-device" class="text-center center-btn">Add device</a>
+        <% } %>
+    </div>
+</div>
+
+<div class="d-flex h-100 justify-content-center align-items-center">
+    <div id="wrap-border" class="d-flex justify-content-center align-items-center p-5">
+        <div id="container" class="d-flex h-100 w-100">
+            <%- body -%>
         </div>
     </div>
+</div>
 
 </body>
 

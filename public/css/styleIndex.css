@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
 html, body {
-  font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 14px;
     height: 100vh;
     margin: 0;
-    overflow:hidden;
+    overflow: hidden;
     padding: 0;
 }
 
@@ -21,22 +21,26 @@ body {
 html {
     --scrollbarBG: #CFD8DC;
     --thumbBG: #90A4AE;
-  }
-  body::-webkit-scrollbar {
+}
+
+body::-webkit-scrollbar {
     width: 11px;
-  }
-  body {
+}
+
+body {
     scrollbar-width: thin;
     scrollbar-color: var(--thumbBG) var(--scrollbarBG);
-  }
-  body::-webkit-scrollbar-track {
+}
+
+body::-webkit-scrollbar-track {
     background: var(--scrollbarBG);
-  }
-  body::-webkit-scrollbar-thumb {
-    background-color: var(--thumbBG) ;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG);
     border-radius: 6px;
     border: 3px solid var(--scrollbarBG);
-  }
+}
 
 /* Scroll bar edit */
 
@@ -46,41 +50,47 @@ nav {
     font-size: 1.2rem;
     display: flex;
     flex-direction: row;
-    align-items: center;
 }
 
-nav a {
+nav a, #container-btn-admin a {
     color: whitesmoke;
     text-decoration: none;
 }
 
-nav a:hover, nav a:active, nav a:visited {
+nav a:hover, nav a:active, nav a:visited, #container-btn-admin a:hover, #container-btn-admin a:visited, #container-btn-admin a:active {
     color: whitesmoke;
     text-decoration: underline;
 }
 
+#container-btn-admin {
+    background-color: #212529;
+    width: fit-content;
+    width: -moz-fit-content;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+}
+
 .fade-hr {
     border-width: 0 0 1px;
-    color: rgba(33, 37,41, 1);
+    color: rgba(33, 37, 41, 1);
     border-image: linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0),
-      rgba(52, 58, 64, 0.325) 25%,
-      rgba(52, 58, 64, 0.625) 50%,
-      rgba(52, 58, 64, 0.325) 75%,
-      rgba(0, 0, 0, 0) 100%) 0 0 100%;
+            90deg,
+            rgba(0, 0, 0, 0),
+            rgba(52, 58, 64, 0.325) 25%,
+            rgba(52, 58, 64, 0.625) 50%,
+            rgba(52, 58, 64, 0.325) 75%,
+            rgba(0, 0, 0, 0) 100%) 0 0 100%;
     border-style: solid;
 }
 
-#wrap-border { 
-    height: 75%;
+#wrap-border {
     width: 75%;
     border: 3px solid transparent;
     background-image: linear-gradient(0deg, whitesmoke 0%, whitesmoke 100%),
-        linear-gradient(0deg, rgba(33, 37, 41, 1) 0%, rgba(33, 37, 41, 1) 100%),
-        linear-gradient(0deg, rgba(33, 37, 41, 1) 0%, rgba(33, 37, 41, 1) 100%),
-        linear-gradient(0deg, rgba(33, 37, 41, 1) 0%, rgba(33, 37, 41, 1) 100%),
-        linear-gradient(0deg, rgba(33, 37, 41, 1) 0%, rgba(33, 37, 41, 1) 100%);
+    linear-gradient(0deg, rgba(33, 37, 41, 1) 0%, rgba(33, 37, 41, 1) 100%),
+    linear-gradient(0deg, rgba(33, 37, 41, 1) 0%, rgba(33, 37, 41, 1) 100%),
+    linear-gradient(0deg, rgba(33, 37, 41, 1) 0%, rgba(33, 37, 41, 1) 100%),
+    linear-gradient(0deg, rgba(33, 37, 41, 1) 0%, rgba(33, 37, 41, 1) 100%);
     background-origin: padding-box, border-box, border-box, border-box, border-box;
     background-repeat: no-repeat;
     background-size: 100% 100%, 13% 25%, 13% 25%, 13% 25%, 13% 25%;
@@ -89,8 +99,9 @@ nav a:hover, nav a:active, nav a:visited {
 
 #container {
     background-color: #edf0f2;
-    border: 2px solid rgba(33, 37,41, 1);
+    border: 2px solid rgba(33, 37, 41, 1);
     flex-direction: column;
+    max-height: inherit;
 }
 
 #top-container {
@@ -101,11 +112,12 @@ nav a:hover, nav a:active, nav a:visited {
 #table-container {
     flex: 1;
     flex-grow: 1;
+    max-height: inherit;
 }
 
 #table-container table {
     width: 80%;
-    border-radius: .5%;
+    border-top-right-radius: 1.5%;
 }
 
 #table-container table tbody {
@@ -121,14 +133,14 @@ nav a:hover, nav a:active, nav a:visited {
 }
 
 #table-container thead {
-    width: calc( 100% - 1em );
+    width: calc(100% - 1em);
 }
 
 .btn-container {
     width: 80%;
 }
 
-#footer { 
+#footer {
     background-color: #212529;
     color: whitesmoke;
     font-size: 1.2rem;
