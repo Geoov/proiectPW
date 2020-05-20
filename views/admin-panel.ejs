@@ -6,19 +6,331 @@
             <div class="container">
 
                 <div class="h3 pb-3 text-center text-white" data-aos="fade-up">Switch Current State</div>
-                <p class="px-5 pb-5 text-center text-white" data-aos="fade-up">Lower, it is presented the situation of <strong>SWITCH</strong>. How much the device is full, with what kind of device and how much avaliable space do you have.</p>
+                <p class="px-5 pb-5 text-center text-white" data-aos="fade-up">Lower, it is presented the situation of
+                    <strong>SWITCH</strong>. How much the device is full, with what kind of device and how much
+                    avaliable space do you have.</p>
                 <div class="row">
 
                     <div class="col-md-12">
 
                         <h3 class="h5 mb-5 text-white">Our Expertise</h3>
 
+                        <%
+                        var contor = [];
+                        var j = 0;
+                        for (let i in locals.devices) {
 
+                            contor[j] = 0;
+                            locals.devices[i].forEach(function () {
+                                contor[j]++;
+                            });
+
+                            j++;
+                        }
+
+                        var device_percent = [];
+                        var device_name = [];
+
+                        for (let i = 0; i < contor.length; i++) {
+                            // device_percent[i] = 0;
+                            device_percent[i] = contor[i] * 100;
+                            device_name[i] = "";
+
+                            if (i == 0) {
+                                device_name[i] = 'Devices';
+                                device_percent[i] /= 40;
+                            } else if (i == 1) {
+                                device_name[i] = 'Access Points';
+                                device_percent[i] /= 4;
+                            } else if (i == 2) {
+                                device_name[i] = 'Servers';
+                                device_percent[i] /= 3;
+                            } else {
+                                device_name[i] = 'Routers';
+                            }
+                        }
+                        %>
+
+                        <% for(let i = 0; i < locals.devices.length; i++ ) { %>
+                            <div class="col px-0 mb-4">
+                                <p class="text-white"> <%- device_name[i] -%> <%- device_percent[i] -%> %</p>
+                                <div class="progress" style="height: 5px;">
+                                    <div class="progress-bar" data-aos="progress-full" data-aos-offset="10"
+                                         data-aos-duration="2000" role="progressbar"
+                                         style="width: <%- device_percent[i] -%>%" aria-valuenow="25"
+                                         aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        <% } %>
+
+                        <div class="col row justify-content-center">
+                            <button type="button" class="btn btn-custom-color btn-lg" data-toggle="modal"
+                                    data-target="#switchModal">
+                                Show all details
+                            </button>
+                        </div>
+
+                        <div class="modal fade bd-example-modal-xl" id="switchModal" tabindex="-1" role="dialog"
+                             aria-labelledby="switchModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+
+                                    <div class="modal-header justify-content-center">
+
+                                        <h4 class="modal-title text center custom-text-primary" id="switchModalLabel">
+                                            Current state of Switch</h4>
+                                    </div>
+
+                                    <div class="modal-body">
+
+                                        <table class="col-md-10 mx-auto justify-content-center table table-striped table-dark borderless effect-8">
+                                            <thead>
+                                            <tr class="text-center">
+                                                <th scope="col">port_id</th>
+                                                <th scope="col">VLAN</th>
+                                                <th scope="col">MAC</th>
+                                                <th scope="col">Device</th>
+                                            </tr>
+                                            </thead>
+
+                                            <tbody>
+
+                                            <% locals.devices[0].forEach(function (switch_data) { %>
+                                                <tr class="text-center">
+                                                    <td> <%- switch_data['port_id']; -%> </td>
+                                                    <td> <%- switch_data['VLAN']; -%> </td>
+                                                    <td> <%- switch_data['MAC']; -%> </td>
+                                                    <td> <%- switch_data['device_type']; -%> </td>
+                                                </tr>
+
+                                            <% }); %>
+                                            -%>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="da-section bg-light" id="wifi">
+
+            <div class="da-services">
+                <div class="container text-center">
+                    <div class="h3 pb-5 text-center" data-aos="fade-up" style="color: #3d3f4c !important;">WiFi
+                        Details
+                    </div>
+                    <div class="row">
+
+                        <% locals.devices[1].forEach(function(ap_details) { %>
+
+                            <div class="col-lg-3 col-md-6">
+                                <div class="card mb-3">
+                                    <div id="wifi_details" class="card-body py-5" data-aos="zoom-in"
+                                         data-aos-duration="500">
+                                        <div class="custom-text-primary"><i class="pb-3 fas fa-wifi fa-3x"></i>
+
+                                            <p class="font-weight-bold mb-5"> <%- ap_details['SSID'] -%> </p>
+
+                                            <div class="row pb-4">
+                                                <i class="col-md-4 px-0 fab fa-500px fa-2x"
+                                                   style="color: #3d3f4c!important;"></i>
+                                                <div class="col-md-8 px-0 pt-1 pr-4 font-weight-bold"
+                                                     style="color: #3d3f4c!important;"><%- ap_details['BSSID'] -%>
+                                                </div>
+                                            </div>
+
+                                            <div class="row pb-4">
+
+                                                <i class="col-md-4 px-2 fas fa-tachometer-alt fa-2x"></i>
+
+                                                <div class="col-md-6 pt-1 font-weight-bold"
+                                                     style="color: #3d3f4c!important;"><%- ap_details['speed'] -%> mbps
+                                                </div>
+                                            </div>
+
+                                            <div class="row pb-4">
+
+                                                <i class="col-md-4 px-2 fab fa-gripfire fa-2x"
+                                                   style="color:#ec600d !important;"></i>
+                                                <div class="col-md-6 pt-1 font-weight-bold"
+                                                     style="color: #3d3f4c!important;"><%- ap_details['secType'] -%></div>
+
+                                            </div>
+
+<!--                                            <div class="row justify-content-center">-->
+
+<!--                                                <button id="<%- ap_details['ESSID'] -%>" type="button" value="edit"-->
+<!--                                                        class="btn btn-sm view_data"><i-->
+<!--                                                            class="col-md-8 px-2 mx-auto far fa-edit fa-3x"></i>-->
+<!--                                                </button>-->
+<!--                                            </div>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <% }); %>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="da-projects" id="server">
+
+            <% for(let i = 0; i < locals.devices[2].length; i++) { %>
+
+                <div class="row mx-0">
+
+                    <% if(i == 0 || i == 2) { %>
+                        <% if(i == 0) { %>
+                            <div class="col-md-6 px-0 da-project-1 img-responsive"
+                                 style="background-image: url('../images/serverProxy.jpg');" data-aos="zoom-in">
+                            </div>
+                        <% } else { %>
+                            <div class="col-md-6 px-0 da-project-1 img-responsive"
+                                 style="background-image: url('../images/serverFTP.jpg');" data-aos="zoom-in">
+                            </div>
+                        <% } %>
+                    <% } %>
+
+                    <div class="col-md-6 pl-5 pt-5 pb-3">
+                        <div class="row h3 justify-content-center" data-aos="fade-up"
+                             style="color: #3d3f4c !important;">
+
+                            <span class="font-weight-bold mb-5"> <%- locals.devices[2][i]['server_type'] -%>  Server  </span>
+
+                        </div>
+
+                        <div class="row mb-5">
+
+                            <div class="col-2 da-project-icon text-center">
+                                <i class="text-warning far fa-address-card fa-3x fa-fw"></i>
+                            </div>
+
+                            <div class="col-8 px-0 my-auto">
+                                <div class="h4 font-weight-bold mb-0 text-center">
+                                    <span class="align-middle"><%- locals.devices[2][i]['IP'] -%></span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row mb-5">
+
+                            <div class="col-2 da-project-icon text-center">
+                                <i class="fab fa-500px fa-3x fa-fw "></i>
+                            </div>
+
+                            <div class="col-8 px-0 my-auto">
+                                <div class="h4 font-weight-bold mb-0 text-center">
+                                    <span class="align-middle"><%- locals.devices[2][i]['MAC'] -%></span>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="row mb-5">
+
+                            <div class="col-2 da-project-icon text-center">
+                                <i class="fab fa-windows fa-3x fa-fw text-primary "></i>
+                            </div>
+
+                            <div class="col-8 px-0 my-auto">
+                                <div class="h4 font-weight-bold mb-0 text-center">
+                                    <span class="align-middle"><%- locals.devices[2][i]['OS'] -%></span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <% if(i == 1) { %>
+                        <div class="col-md-6 px-0 da-project-1 img-responsive"
+                             style="background-image: url('../images/serverMail.jpg');" data-aos="zoom-in">
+                        </div>
+                    <% } %>
+
+                </div>
+
+            <% } %>
+
+        </div>
+
+        <div class="da-router" id="router">
+
+            <div class="container">
+
+                <div class="text-white pb-5" data-aos="fade-up">
+                    <h1 class="custom-font font-weight-bold ">Router configuration</h1>
+                </div>
+
+                <div class="row pb-5">
+
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+
+                        <form id="router-formInt0" data-aos="zoom-in-up" class="col-md-12 focused" method="post">
+                            <input id="router-inputInt0" type="text" name="int0" id="int0" class="col-md-10 d-inline"
+                                   value="<%- locals.devices[3][0]['IP_int_0'] -%>"
+                                   pattern="^[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}$" required>
+
+                            <div class="col-md-2 px-0 d-inline">
+                                <button type="submit" class="btn btn-sm" id="routerUpdate">
+                                    <i class="mx-auto far fa-edit fa-2x"></i>
+                                </button>
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <div class="col-md-4"></div>
+
+                </div>
+
+                <div class="row pb-5">
+
+                    <% for(let i = 1; i < 4; i++) { %>
+
+                        <div class="col-md-4 mt-5 d-flex align-items-start justify-content-center <%- (i == 2) ? "pt-5" : "" -%>"
+                             data-aos="<%- (i == 1) ? "flip-left" : (i == 2) ? "zoom-in-up" : "flip-right" -%>">
+
+                            <form id="router-formInt<%- i -%>" class="col-md-10" action="" method="POST">
+
+                                <input id="router-inputInt1" type="text" name="int<%- i %>" class="col-md-10 d-inline"
+                                       placeholder="<%- locals.devices[3][0]['IP_int_' + i] -%>" readonly>
+
+                                <div class="col-md-2 px-0 d-inline">
+                                    <button type="button" class="btn btn-sm px-1">
+                                        <i class="mx-auto fas fa-lock fa-2x"></i>
+                                    </button>
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                    <% } %>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="scrolltop">
+            <button class="btn btn-primary"><span class="icon"><i class="fas fa-angle-up fa-2x"></i></span></button>
+        </div>
+
     </div>
 </div>
 </body>

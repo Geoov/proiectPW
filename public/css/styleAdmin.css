@@ -271,3 +271,8 @@ section{
 .focused {
     background: linear-gradient(90deg, #ff8a00, #e52e71)!important;
 }
+
+.btn:focus {
+    outline: none!important;
+    box-shadow: none!important;
+}

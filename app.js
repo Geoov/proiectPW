@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const app = express();
 const bcrypt = require('bcrypt');
+var urlencodedparser = bodyParser.urlencoded({extended:false})
 
 const port = 7777;
 
@@ -13,7 +14,7 @@ app.use(session({
     secret: 'shhhhhhhh',
     saveUninitialized: true,
     resave: false,
-    cookie: {secure: false, maxAge: 10}
+    cookie: {secure: false, maxAge: 600000}
 }));
 
 app.get('/status', (req, res) => {
@@ -371,11 +372,10 @@ app.get('/admin-panel', (req, res) => {
 
     if (sess_rol && sess_id && sess_uname && sess_rol == 2) {
 
-
         const switch_p = new Promise(function (resolve, reject) {
             conn.query('SELECT * FROM switch', (err, switch_data) => {
-                if (err) throw err;
-                resolve(switch_data);
+                if (err) reject(err)
+                else resolve(switch_data);
             });
         });
 
@@ -383,7 +383,7 @@ app.get('/admin-panel', (req, res) => {
 
         const ap_p = new Promise(function (resolve, reject) {
             conn.query('SELECT ESSID FROM access_point_bridge', (err, essid) => {
-
+                if (err) reject(err);
                 var promise_cu_sapa = new Promise(function (done, crap) {
 
                     var contor = 0;
@@ -396,7 +396,7 @@ app.get('/admin-panel', (req, res) => {
                     essid.forEach(function (row) {
                         conn.query('SELECT access_point_details.*, access_point_bridge.BSSID FROM access_point_details, access_point_bridge WHERE access_point_details.AP_ESSID = access_point_bridge.ESSID AND access_point_bridge.ESSID = ?',
                             row['ESSID'], (err, result) => {
-                                if (err) throw err;
+                                if (err) crap(err);
                                 let newRow = {};
                                 newRow['ESSID'] = result[0].AP_ESSID;
                                 newRow['BSSID'] = result[0].BSSID;
@@ -418,40 +418,44 @@ app.get('/admin-panel', (req, res) => {
 
         const server_p = new Promise(function (resolve, reject) {
             conn.query('SELECT * FROM server', (err, server_data) => {
-                if (err) throw err;
-                resolve(server_data);
+                if (err) reject(err)
+                else resolve(server_data);
             });
         });
 
         const router_p = new Promise(function (resolve, reject) {
             conn.query('SELECT * FROM router', (err, router_data) => {
-                if (err) throw err;
-                resolve(router_data);
+                if (err) reject(err)
+                else resolve(router_data);
             });
         });
 
-        Promise.all([switch_p, ap_p, server_p, router_p]).then(values => {
-
-            for (let i in values[3]) {
-                // console.log("AP: " + values[1][i]['ESSID']);
-                // console.log("AP: " + values[1][i]['BSSID']);
-                // console.log("AP: " + values[1][i]['SSID']);
-                // console.log("AP: " + values[1][i]['speed']);
-                // console.log("AP: " + values[1][i]['secType']);
-                // console.log(values[3][i]);
-            }
-
+        Promise.all([switch_p, ap_p, server_p, router_p]).then(responses => {
             res.render('admin-panel', {
                 layout: 'layoutAdmin',
-                locals: {_id: sess_id, uname: sess_uname, rol: sess_rol}
+                locals: {'_id': sess_id, 'uname': sess_uname, 'rol': sess_rol, 'devices': responses}
             });
-        });
+        })
+            .catch(function (error) {
+                throw (error);
+            });
+
     } else {
         res.redirect('/forbidden');
     }
 });
 
-app.get('/forbidden', function(req, res, next) {
+app.post('/ajax-router', urlencodedparser, function(req, res){
+
+    console.log(JSON.stringify(req.body.MAC));
+
+    conn.query('UPDATE router SET IP_INT_0 = ?', req.body.MAC, (err, success) => {
+        return res.send(req.body.MAC);
+    });
+
+});
+
+app.get('/forbidden', function (req, res, next) {
     let err = new Error(`Next time, u ded`); // Sets error message, includes the requester's ip address!
     res.send('Next time, u ded');
     err.statusCode = 403;

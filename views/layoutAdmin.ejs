@@ -116,7 +116,6 @@
 
         </div>
 
-
     </section>
 
 </header>
@@ -132,11 +131,52 @@
 <script src="js/main.js"></script>
 
 <script type="text/javascript">
-    $(function() {
+    $(function () {
         $('[data-toggle="popover"]').popover({
             container: 'body'
         });
     });
+</script>
+
+<script type="text/javascript">
+
+    $('#router-formInt0').submit(function(event) {
+        event.preventDefault();
+        ajaxPost();
+    });
+
+    function ajaxPost() {
+
+        var data = {"MAC": $('input[name=int0]').val()};
+
+        $('#routerUpdate').click(function () {
+            var val = $(this).attr('int0');
+
+            $.ajax({
+                url: '/ajax-router',
+                type: 'POST',
+                data: JSON.stringify(data),
+                contentType : "application/json",
+                cache: false,
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                    $(this).attr("placeholder", "data");
+                }
+                , error: function (jqXHR, textStatus, err) {
+                    console.log('text status ' + textStatus + ', err ' + err)
+                }
+            })
+        });
+
+        // resetData();
+    }
+    
+    //
+    // function resetData(){
+    //     $('input[name=int0]').val("");
+    // }
+
 </script>
 
 </body>
